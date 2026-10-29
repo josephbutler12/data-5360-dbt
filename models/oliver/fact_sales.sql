@@ -1,4 +1,4 @@
-{{ config(
+{#{{ config(
     materialized = 'table',
     schema = 'dw_oliver'
 ) }}
@@ -35,4 +35,4 @@ JOIN {{ ref('oliver_dim_store') }} s
     ON o.STORE_ID = s.STORE_ID
 
 JOIN {{ ref('oliver_dim_date') }} d
-    ON d.date_day = o.ORDER_DATE
+    ON d.date_day = o.ORDER_DATE#}

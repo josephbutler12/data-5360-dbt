@@ -1,4 +1,4 @@
-{{ config(
+{#{{ config(
     materialized = 'table',
     schema = 'dw_oliver'
 ) }}
@@ -12,4 +12,4 @@ SELECT
     PHONE_NUMBER,
     POSITION,
     HIRE_DATE
-FROM {{ source('oliver_landing', 'employee') }}
+FROM {{ source('oliver_landing', 'employee') }}#}
