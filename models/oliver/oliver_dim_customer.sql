@@ -1,4 +1,4 @@
-{{ config(
+{#{{ config(
     materialized = 'table',
     schema = 'dw_oliver'
 ) }}
@@ -11,4 +11,4 @@ SELECT
     EMAIL,
     PHONE_NUMBER,
     STATE
-FROM {{ source('oliver_landing', 'customer') }}
+FROM {{ source('oliver_landing', 'customer') }}#}

@@ -1,4 +1,4 @@
-{{ config(
+{#{{ config(
     materialized = 'table',
     schema = 'dw_oliver'
 ) }}
@@ -10,4 +10,4 @@ SELECT
     CITY,
     STATE,
     STREET
-FROM {{ source('oliver_landing', 'store') }}
+FROM {{ source('oliver_landing', 'store') }}#}
