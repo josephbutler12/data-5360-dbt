@@ -2,10 +2,18 @@ version: 2
 
 sources:
   - name: insurance_landing
-    database: JOSEPHBUTLER        
+    database: JOSEPHBUTLER
     schema: insurance_dw_source
     tables:
       - name: agents
       - name: claims
       - name: customers
       - name: policies
+      - name: customer_service_interactions
+
+models:
+  - name: stg_customer_service_interactions
+    description: "Staging model for customer service interactions."
+
+  - name: fact_interaction
+    description: "Fact table combining customer interactions with customer dimension."
