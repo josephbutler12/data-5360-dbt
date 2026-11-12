@@ -1,0 +1,20 @@
+
+version: 2
+
+models:
+  - name: dim_policy
+    description: "Insurance Policy Dimension"
+    columns:
+      - name: policy_key
+        tests:
+          - unique
+
+
+  - name: fact_claim
+    description: "Insurance Claim Fact"
+    columns:
+      - name: policy_key
+        description: "A foreign key to the policy dimension"
+        tests:
+          - not_null
+
