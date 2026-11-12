@@ -1,3 +1,4 @@
+
 version: 2
 
 sources:
@@ -14,6 +15,28 @@ sources:
 models:
   - name: stg_customer_service_interactions
     description: "Staging model for customer service interactions."
+    columns:
+      - name: issue_type
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - "New Claim"
+                  - "Claim Status"
+                  - "Policy Change"
+                  - "Coverage Info"
+                  - "Billing Issue"
+                  - "Policy Renewal"
 
+  
   - name: fact_interaction
     description: "Fact table combining customer interactions with customer dimension."
+    columns:
+      - name: customer_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_customer')
+                field: customer_key
+
+

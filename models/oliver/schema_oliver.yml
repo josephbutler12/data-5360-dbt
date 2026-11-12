@@ -52,7 +52,6 @@ models:
   - name: sales
     description: "Semantic model combining all dimensions with the fact table."
 
-    models:
   - name: stg_employee_certifications
     description: "Staging model that parses certification JSON fields into structured columns for employee certifications."
 
