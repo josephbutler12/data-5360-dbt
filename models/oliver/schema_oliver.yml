@@ -54,7 +54,30 @@ models:
 
   - name: stg_employee_certifications
     description: "Staging model that parses certification JSON fields into structured columns for employee certifications."
+    columns:
+      - name: certification_name
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - "Cash Handling and Security"
+                  - "Conflict Resolution"
+                  - "Customer Service Excellence"
+                  - "Inventory Management"
+                  - "Leadership and Coaching"
+                  - "Point of Sale Operations"
+                  - "Product Knowledge Level 2"
+                  - "Strategic Retail Operations"
+                  - "Workplace Safety"
 
   - name: fact_certification
     description: "Fact table at the grain of one certification awarded to one employee on one specific date."
+    columns:
+      - name: employee_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('oliver_dim_employee')
+                field: employee_key
 
+ 
