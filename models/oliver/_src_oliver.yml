@@ -4,5 +4,10 @@ sources:
     schema: OLIVER_DW_SOURCE
     tables:
       - name: employee_certifications
-
+      - name: orderline
+      - name: orders
+      - name: customer
+      - name: employee
+      - name: product
+      - name: store
 
